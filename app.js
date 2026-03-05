@@ -9,7 +9,7 @@ app.get("/", (req, res) => {
         console.error(err);
         return res.status(500).json({ error: "Internal server error" });
     }
-    res.status(200).json( "Bienvenu sur mon serveur");
+    res.status(403).json( "Access denied" );
 });
 
 export default app;
