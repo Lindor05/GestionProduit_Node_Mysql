@@ -1,0 +1,15 @@
+{
+  "name": "gestionproduit_node_mysql",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "express,dotenv,mysql2,sequelize,jsonwebtoken,bcryptjs,joi,multer"
+  ],
+  "author": "Lindor Diop",
+  "license": "ISC",
+  "description": "API REST gestion de produit"
+}
