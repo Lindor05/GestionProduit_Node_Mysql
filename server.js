@@ -1,8 +1,14 @@
 import app from './app.js';
 import dotenv from 'dotenv';
+import { sequelize } from './models/index.js';
 
 dotenv.config();
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`Server is running on port ${process.env.PORT}`);
-});
+sequelize.sync().then(() => {
+    app.listen(process.env.PORT || 3000, () => {
+        console.log(`Server is available  on port ${process.env.PORT}`);
+    });
+})
+
+
+export default app;
