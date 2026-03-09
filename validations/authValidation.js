@@ -1,17 +1,24 @@
-import joi from "joi";
+import Joi from "joi";
 
-export const registerSchema = joi.object({
-    username:
-        joi.string()
+export const registerSchema = Joi.object({
+    name:
+        Joi.string()
         .min(3)
         .max(30)
-        .required(),
+        .required()
+        .messages({
+                'string.base': 'Username must be a string',
+                'string.empty': 'Username cannot be empty',
+                'string.min': 'Username should have a minimum length of 3',
+                'string.max': 'Username should have a maximum length of 30',
+            })
+        ,
     email:
-        joi.string()
+        Joi.string()
         .email()
         .required(),
     password: 
-        joi.string()
+        Joi.string()
         .min(6)
         .required()
 });

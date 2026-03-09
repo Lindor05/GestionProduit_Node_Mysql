@@ -1,4 +1,5 @@
 import express from "express";
+import authRoutes from "./routes/auth.rout.js";
 
 const app = express();
 
@@ -11,5 +12,8 @@ app.get("/", (req, res) => {
     }
     res.status(403).json( "Access denied" );
 });
+
+
+app.use("/api/auth", authRoutes);
 
 export default app;
